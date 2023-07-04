@@ -25,8 +25,7 @@ function createTable() {
         table.string('password');
         table.integer('phone');
         table.string('address');
-        table.dateTime('created_at');
-        //table.dateTime('last_login_at');
+        table.timestamp('created_at').defaultTo(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''));
         table.boolean('gender');
     });
 }
@@ -42,4 +41,7 @@ createTable()
     });
 // Use `db` for database operations
 */
+
+
+
 export default db;
